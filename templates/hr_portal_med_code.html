@@ -1,0 +1,31 @@
+{% extends "health_care_portal_base.html" %}
+
+{% block content %}
+
+<center>
+    <h4>Enter a complete employee ID or medical code</h4>
+    <br>
+<div style="margin-left: 0%;">
+    <h5>Employee IDs Samples</h5>
+        <li>EE-0022418</li>
+        <li>EE-0025350</li>
+        <li>EE-0029714</li>
+    <br>
+    <h5>Medical Code Samples</h5>
+    <li>G0435</li>
+    <li>77063</li>
+    <li>P3001</li>
+    </div>
+<br>
+    <div>
+        <form method='post' action='/hr/portal'>
+            <label for="empID">Enter 10-Digit Employee ID or Medical Code:</label>
+            <input type='text' name='empID' />
+            <input type='submit' />
+        </form>
+    </div>
+    <div style="color:red; font-size:30px">{{message}}</div>
+    <br>
+    <h6>Medical code search will only show first 15</h6>
+</center>
+{% endblock %}

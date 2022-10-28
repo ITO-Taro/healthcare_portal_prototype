@@ -1,0 +1,39 @@
+{% extends "health_care_portal_base.html" %}
+{% block content %}
+<br>
+<center>
+{% for code in data['all_codes'] %}
+<h3>
+    Procedure Code: {{code}}
+    Description: {{data[code]["desc"]}}
+</h3>
+<table style='border: 1px solid black; width:800px'>
+    <thead>
+        <tr>
+        <th style='border: 1px solid black', rowspan="2"><center>Gender</center></th>
+        <th style='border: 1px solid black', rowspan="2"><center>Medical Cost - Mean</center></th>
+        <th style='border: 1px solid black', rowspan="2"><center>Medical Cost - Median</center></th>
+        <th style='border: 1px solid black', rowspan="2"><center>Medical Cost - Modes</center></th>
+        <th style='border: 1px solid black', rowspan="2"><center>Medical Cost - SD</center></th>
+        <th style='border: 1px solid black', rowspan="2"><center>Medical Cost Mean Difference</center></th>
+        </tr>
+    </thead>
+    {% for gender in data["genders"] %}
+    <tbody>
+        <tr>
+        <td style='border: 1px solid black'><center>{{i}}</center></td>
+        <td style='border: 1px solid black'><center>{{data[code]["data"][gender][0]}}</center></td>
+        <td style='border: 1px solid black'><center>{{data[code]["data"][gender][1]}}</center></td>
+        <td style='border: 1px solid black'><center>{{data[code]["data"][gender][2]}}</center></td>
+        <td style='border: 1px solid black'><center>{{data[code]["data"][gender][3]}}</center></td>
+        <td style='border: 1px solid black'><center>{{data[code]["data"][gender][4]}}</center></td>
+        </tr>
+    </tbody>
+    {% endfor %}
+</table>
+<p></p>
+<h3>On average women were charged ${{data[code]["diff"]}} higer than men</h3>
+<br>
+{% endfor %}
+</center>
+{% endblock content %}

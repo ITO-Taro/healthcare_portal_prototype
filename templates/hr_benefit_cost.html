@@ -1,0 +1,47 @@
+{% extends "health_care_portal_base.html" %}
+{% block content %}
+<br>
+<center>
+    <h5>
+        <li>Retrieves the total number of all medical procedure claimed and number of employees.</li>
+        <li>Filter total number of procedures and employees by job title and year.</li>
+        <li>Calculated the total, mean, modes, and standard deviation for each job title.</li>
+    </h5>
+    <br>
+<table style='border: 0.5px solid white; width:750px'>
+    <thead style="color: white; font-size: 12px;">
+        <tr>
+        <th style='border: 0.5px solid white', rowspan="2"><center>Title</center></th>
+        <th style='border: 0.5px solid white', rowspan="2"><center>Year</center></th>
+        <th style='border: 0.5px solid white', rowspan="2"><center>Total Number of Employees</center></th>
+        <th style='border: 0.5px solid white', rowspan="2"><center>Total Number of Procedures</center></th>
+        <th style='border: 0.5px solid white', rowspan="2"><center>Medical Cost - Total</center></th>
+        <th style='border: 0.5px solid white', rowspan="2"><center>Medical Cost - Mean</center></th>
+        <th style='border: 0.5px solid white', rowspan="2"><center>Medical Cost - Median</center></th>
+        <th style='border: 0.5px solid white', rowspan="2"><center>Medical Cost - modes</center></th>
+        <th style='border: 0.5px solid white', rowspan="2"><center>Medical Cost - SD</center></th>
+        </tr>
+    </thead>
+    {% for k,v in data.items() %}
+    {% for n in range(v|length) %}
+    {% for k1,v1 in v[n].items() %}
+    <tbody style="color: white; font-size: 11px;">
+        <tr>
+        <td style='border: 0.5px solid white'><center>{{k}}</center></td>
+        <td style='border: 0.5px solid white'><center>{{k1}}</center></td>
+        <td style='border: 0.5px solid white'><center>{{v1[0]}}</center></td>
+        <td style='border: 0.5px solid white'><center>{{v1[1]}}</center></td>
+        <td style='border: 0.5px solid white'><center>{{v1[2]}}</center></td>
+        <td style='border: 0.5px solid white'><center>{{v1[3]}}</center></td>
+        <td style='border: 0.5px solid white'><center>{{v1[4]}}</center></td>
+        <td style='border: 0.5px solid white'><center>{{v1[5]}}</center></td>
+        <td style='border: 0.5px solid white'><center>{{v1[6]}}</center></td>
+        </tr>
+    </tbody>
+    {% endfor %}
+    {% endfor %}
+    {% endfor %}
+    </table>
+<br><br>
+</center>
+{% endblock content %}

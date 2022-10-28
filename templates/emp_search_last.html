@@ -1,0 +1,26 @@
+{% extends "portal/index.html" %}
+{% block content %}
+
+<center>
+    <br>
+    <div style="margin-left: 0;">
+    <h4>Enter partial or complete employee last name  that is 2 characters or more</h4><br>
+    <h5>Examples</h5>
+            <li>Smith</li>
+            <li>smi</li>
+            <li>willia</li>
+    </div>
+    <br>
+
+    <div>
+        <form method="post" action="emp_search_last">
+            <label for="last_name">Enter Employee Last Name</label>
+            <input type="text" name="last_name"/>
+            <input type="submit">
+        </form>
+    </div>
+    <div style="color:red; font-size:30px">{{message}}</div>
+    <br>
+    <h6>Only shows first 200 matches</h6>
+</center>
+{% endblock content %}

@@ -1,0 +1,42 @@
+Welcome to Health Care Portal Project
+
+Over View:
+
+This project demonstrates some of my skills listed below:
+	▪	Read data from excel, text, and csv files
+	▪	Create, insert, and retrieve information from data base using SQLite and SQLAlchemy queries including complex filtering or conditioning
+	▪	Create tables in html with the retrieved data
+	▪	Visualization of retrieved data via various charts using matplotlib
+	▪	Make tables and charts images available on browsers via html using jinja
+
+Descriptions:
+
+Employee Search By Last Name:
+	▪	Enter partial or complete last name which must be 2 characters or more
+	▪	Retrieves all information associated with the name
+
+Filter By Salary: 
+	▪	Enter 2-3 digits which will be multiplied by 1000
+	▪	Digits 4 or greater in length will remain as is
+	▪	Retrieves all employee information whose salary fall in the provided range
+
+Portal:
+	▪	Takes 2 types of input, employee ID or medical code (must be complete)
+	▪	Retrieves all employee information associated with the employee ID given
+	▪	When a medical code is entered,  it retrieves all employee information who had used or claimed the medical code in the past
+	▪	Also calculates the mean procedure price by gender
+
+Summary: 
+	▪	Calculates the annual total number of medical procedures claimed
+	▪	Calculates number of employees who claimed one or more medical procedure(s)
+	▪	Calculates total, mean, median, modes, and standard deviation cost of all procedures
+
+Total Benefit Cost:
+	▪	Retrieves total number of employees
+	▪	Retrieves total number of medical procedure claimed
+	▪	Calcuates total number of medical procedure claimed, total, mean, median, modes, and standard deviation of medical cost per job title per year
+
+Med Code Analysis With SQL:
+	▪	Use SQL statements via SQLAlchemy to retrieve data from the database
+	▪	Lists the 10 employees with the highest total medical cost
+	▪	Top 10 medical procedures by frequency and total cost

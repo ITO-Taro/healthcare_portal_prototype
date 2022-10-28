@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taro Ito</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Maitree:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='portfolio.css')}}">
+</head>
+
+<body>
+<br>
+    <div class="bg-img" id="salary-analysis">
+        <!-- <center><div style="padding-bottom: 2%;"><h1 class="heading1" id="salary-analysis-home-heading">Health Care Portal</h1></div></center> -->
+        <p class="heading1">Health Care Portal</p>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid" id="heading-container">
+                <a class="navbar-brand" onclick="location.reload()"  href="https://ito-taro.github.io/"><i class="fas fa-home fa-2x" style="padding-bottom:1rem;color:rgb(247, 247, 247);"></i></a>
+                <button class="navbar-toggler al-auto custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon" ></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item" id="salary-analysis-tabs">
+                            <a class="nav-link active" aria-current="page" href="/" >Project Description</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/emp_search/last">Employee Search By Last Name</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/emp_search/salary_range">Filter By Salary</a>
+                        </li>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/hr/portal">Portal</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/hr/summary">Summary</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/hr/benefit_cost">Total Benefit Cost</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/medical_procedure_analysis_sql">Med Code Analysis With SQL</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    
+    <div id="jinjaContent">
+    {% block content %}
+    {% endblock content%}
+    </div>
+    </div>
+    <script src="https://kit.fontawesome.com/7b980e144f.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>

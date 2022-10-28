@@ -1,0 +1,13 @@
+{% extends "health_care_portal_base.html" %}
+{% block content %}
+<center>
+<div><img src={{data["barh_title"]}} alt=""></div>
+
+<br>
+<div><img src={{data["bar_year"]}} alt=""></div>
+<br>
+{% for num in range(data["pie_charts"]|length) %}
+<div><img src={{data["pie_charts"][num]}} alt=""></div>
+{% endfor %}
+</center>
+{% endblock content %}

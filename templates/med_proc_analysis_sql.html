@@ -1,0 +1,81 @@
+{% extends "health_care_portal_base.html" %}
+{% block content %}
+<center>
+    <br>
+    <h5>
+        <li>Use SQL statements via SQLAlchemy to retrieve data from the database</li>
+        <li>Lists the 10 employees with the highest total medical cost</li>
+    </h5>
+    <br><br>
+<table style='border: 0.5px solid white; width:750px'>
+    <h4>
+        Top 10 Medical Procedures by Total Count
+    </h4>
+    <thead style="color:white; font-size: 12px;">
+        <tr>
+        <th style='border: 0.5px solid white', rowspan="2"><center>Medical Procedure Code</center></th>
+        <th style='border: 0.5px solid white', rowspan="2"><center>Procedure Description</center></th>
+        <th style='border: 0.5px solid white', rowspan="2"><center>Total Count</center></th>
+        </tr>
+    </thead>
+    {% for num in range(data['top10count']|length) %}
+    <tbody style="color:white; font-size: 11px;">
+        <tr>
+        <td style='border: 0.5px solid white'><center>{{data['top10count'][num][0]}}</center></td>
+        <td style='border: 0.5px solid white'><center>{{data['top10count'][num][1]}}</center></td>
+        <td style='border: 0.5px solid white'><center>{{data['top10count'][num][2]}}</center></td>
+        </tr>
+    </tbody>
+    {% endfor %}
+</table>
+<br><br>
+<table style='border: 0.5px solid white; width:750px'>
+    <h4>
+        Top 10 Medical Procedure by Cost
+    </h4>
+    <thead style="color:white; font-size: 12px;">
+        <th style='border: 0.5px solid white' rowspan="2"><center>Medical Procedure Code</center></th>
+        <th style='border: 0.5px solid white' rowspan="2"><center>Procedure Description</center></th>
+        <th style='border: 0.5px solid white' rowspan="2"><center>Procedure Cost ($)</center></th>
+        </tr>
+    </thead>
+
+    {% for num in range(data['top10cost']|length) %}
+    <tbody style="color:white; font-size: 11px;">
+        <tr>
+        <td style='border: 0.5px solid white'><center>{{data['top10cost'][num][0]}}</center></td>
+        <td style='border: 0.5px solid white'><center>{{data['top10cost'][num][1]}}</center></td>
+        <td style='border: 0.5px solid white'><center>{{data['top10cost'][num][2]}}</center></td>
+        </tr>
+    </tbody>
+    {% endfor %}
+</table>
+<br><br>
+<table style='border: 0.5px solid white; width:750px'>
+    <h4>
+        Top 10 Employees by Total Medical Cost 
+    </h4>
+    <thead style="color:white; font-size: 12px;">
+        <tr>
+        <th style='border: 0.5px solid white', rowspan="2"><center>Employee ID</center></th>
+        <th style='border: 0.5px solid white', rowspan="2"><center>Employee LAST NAME</center></th>
+        <th style='border: 0.5px solid white', rowspan="2"><center>Employee First Name</center></th>
+        <th style='border: 0.5px solid white', rowspan="2"><center>Employee Gender</center></th>
+        <th style='border: 0.5px solid white', rowspan="2"><center>Total Medical Cost ($)</center></th>
+        </tr>
+    </thead>
+    {% for num in range(data['top10emp']|length) %}
+    <tbody style="color:white; font-size: 11px;">
+        <tr>
+        <td style='border: 0.5px solid white'><center>{{data['top10emp'][num][0]}}</center></td>
+        <td style='border: 0.5px solid white'><center>{{data['top10emp'][num][1]}}</center></td>
+        <td style='border: 0.5px solid white'><center>{{data['top10emp'][num][2]}}</center></td>
+        <td style='border: 0.5px solid white'><center>{{data['top10emp'][num][3]}}</center></td>
+        <td style='border: 0.5px solid white'><center>{{data['top10emp'][num][4]}}</center></td>
+        </tr>
+    </tbody>
+    {% endfor %}
+</table>
+<br><br>
+</center>
+{% endblock content %}

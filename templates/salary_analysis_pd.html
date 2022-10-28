@@ -1,0 +1,36 @@
+{% extends "health_care_portal_base.html" %}
+{% block content %}
+<center>
+<div><{{data['charts']['salary_distribution']}} alt=""></div>
+<br>
+<div><{{data['charts']['distribution_cumulative']}} alt=""></div>
+<br>
+<table style='border: 1px solid black; width:1000px'>
+    <thead>
+        <tr>
+        <th style='border: 1px solid black', rowspan="2"><center>Employee Title</center></th>
+        <th style='border: 1px solid black', rowspan="2"><center>Employee Gender</center></th>
+        <th style='border: 1px solid black', rowspan="2"><center>Salary - Mean</center></th>
+        <th style='border: 1px solid black', rowspan="2"><center>Salary - Median</center></th>
+        <th style='border: 1px solid black', rowspan="2"><center>Salary - Mode</center></th>
+        <th style='border: 1px solid black', rowspan="2"><center>Salary -  SD</center></th>
+        <th style='border: 1px solid black', rowspan="2"><center>Salary -  Mean Gender Difference</center></th>
+        </tr>
+    </thead>
+    {% for k in data['all_salary_pd'].keys() %}
+    <tbody>
+        <tr>
+        <td style='border: 1px solid black'><center>{{data['all_salary_pd'][k]["title"]}}</center></td>
+        <td style='border: 1px solid black'><center>{{data['all_salary_pd'][k]["gender"]}}</center></td>
+        <td style='border: 1px solid black'><center>{{data['all_salary_pd'][k]["mean"]}}</center></td>
+        <td style='border: 1px solid black'><center>{{data['all_salary_pd'][k]["median"]}}</center></td>
+        <td style='border: 1px solid black'><center>{{data['all_salary_pd'][k]["modes"]}}</center></td>
+        <td style='border: 1px solid black'><center>{{data['all_salary_pd'][k]["SD"]}}</center></td>
+        <td style='border: 1px solid black'><center>{{data['all_salary_pd'][k]["Diff"]}}</center></td>
+        </tr>
+    </tbody>
+    {% endfor %}
+</table>
+<br><br>
+</center>
+{% endblock content %}
